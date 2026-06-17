@@ -7,7 +7,20 @@ const NewsBoard = ({category}) => {
         const [articles,setArticles] = useState([]);
         useEffect(()=>{
             let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
-            fetch(url).then(response=> response.json()).then(data=> setArticles(data.articles));
+            fetch(url)
+              .then(response=> response.json())
+              .then(data=> {
+                if (data && data.articles) {
+                  setArticles(data.articles);
+                } else {
+                  console.error("API error or missing articles:", data);
+                  setArticles([]);
+                }
+              })
+              .catch(err => {
+                console.error("Fetch error:", err);
+                setArticles([]);
+              });
 
         },[category])
 
