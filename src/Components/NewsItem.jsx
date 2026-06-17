@@ -7,12 +7,12 @@ const NewsItem = ({ title, description, src, url }) => {
 
   return (
     <div
-      className="card bg-dark text-light mb-3 d-inline-block my-2 mx-2 px-2 py-2"
-      style={{ maxWidth: "345px" }}
+      className="card bg-dark text-light mb-3 my-2 mx-2"
+      style={{ width: "100%", maxWidth: "345px", overflow: "hidden" }}
     >
       <img
         src={src || image}
-        style={{ height: "200px", width: "360px" }}
+        style={{ height: "200px", width: "100%", objectFit: "cover" }}
         className="card-img-top"
         alt={title || "news image"}
       />

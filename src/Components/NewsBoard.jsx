@@ -16,10 +16,12 @@ const NewsBoard = ({category}) => {
         <h2 className="text-center">
             Latest <span className="badge bg-danger">News</span>            
         </h2>
-        {articles .filter(news => news.title && news.description && news.url).map((news, index)=>(
-            <NewsItem Key={index} title={news.title} description={news.description} src={news.urlToImage} url={news.url} />      
-        ))}
+        <div className="d-flex flex-wrap justify-content-center">
+          {articles.filter(news => news.title && news.description && news.url).map((news, index)=>(
+            <NewsItem key={index} title={news.title} description={news.description} src={news.urlToImage} url={news.url} />      
+          ))}
         </div>
+      </div>
     )
 }
 export default NewsBoard
