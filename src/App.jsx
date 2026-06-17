@@ -1,7 +1,7 @@
 import { useState } from "react"
-import Navbar from "./Components/Navbar"
+import Navbar from "./Components/NavBar"
 import NewsBoard from "./Components/NewsBoard"
-import NewsItem from "./Components/Newsitem"
+import NewsItem from "./Components/NewsItem"
 
 
 const App = () => {
